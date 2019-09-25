@@ -24,15 +24,15 @@ end
 
 const CURRENTFIGURE = Ref(Figure())
 
-Base.showable(::MIME"image/svg+xml", _::NativeSVG.PlotObject) = true
+Base.showable(::MIME"image/svg+xml", _::SVGPlots.PlotObject) = true
 
-function Base.show(io::IO, mime::MIME"image/svg+xml", _::NativeSVG.PlotObject)
+function Base.show(io::IO, mime::MIME"image/svg+xml", _::SVGPlots.PlotObject)
     show(io, mime, gcf())
 end
 
-Base.showable(::MIME"image/svg+xml", _::NativeSVG.Figure) = true
+Base.showable(::MIME"image/svg+xml", _::SVGPlots.Figure) = true
 
-function Base.show(io::IO, mime::MIME"image/svg+xml", fig::NativeSVG.Figure)
+function Base.show(io::IO, mime::MIME"image/svg+xml", fig::SVGPlots.Figure)
     show(io, mime, Drawing(fig))
 end
 
@@ -180,7 +180,7 @@ const COLORS = (
 function Drawing(fig::Figure)
     width = fig[:width]
     height = fig[:height]
-    Drawing(
+    NativeSVG.Drawing(
         width = width,
         height = height,
         xmlns!xlink = "http://www.w3.org/1999/xlink",

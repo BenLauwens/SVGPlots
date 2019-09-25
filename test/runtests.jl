@@ -42,9 +42,3 @@ hold(true)
 plot(x, x.^5)
 title("test")
 display(gcf())
-dr =
-    Drawing(width = "300", height = "200") do
-        rect(width = "100%", height = "100%", fill = :white)
-        latex("E=mc^2", x=20, y=20, width=50, height=20)
-    end
-display(dr)

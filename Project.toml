@@ -1,0 +1,16 @@
+name = "SVGPlots"
+uuid = "3f0a8301-6883-4e90-b009-ea7e30f374a7"
+keywords = ["SVG", "Plots"]
+license = "MIT"
+desc = "Julia SVG plots."
+authors = ["Ben Lauwens <ben.lauwens@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+NativeSVG = "5f95e7b2-fe07-4078-b4a7-f744f426795c"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
